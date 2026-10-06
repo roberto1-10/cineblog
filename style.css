@@ -1,0 +1,334 @@
+/* ==============================
+   STILE GENERALE
+   ============================== */
+
+:root {
+  --bg: #0b0b0f;
+  --surface: #15151c;
+  --surface-light: #20202a;
+  --text: #f4f4f5;
+  --muted: #a7a7b0;
+  --accent: #e50914;
+  --accent-dark: #b80710;
+  --border: #2c2c36;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container-custom {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+/* ==============================
+   NAVBAR
+   ============================== */
+
+.navbar-custom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  padding: 18px 0;
+  background: rgba(11, 11, 15, 0.92);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-custom .container-custom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: #d8d8dd;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+/* ==============================
+   HERO
+   ============================== */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 100px 20px 60px;
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.86)),
+    radial-gradient(circle at center, #56242a 0%, #17141b 42%, #08080b 100%);
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: #ef646b;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(3rem, 8vw, 6.8rem);
+  line-height: 0.95;
+  letter-spacing: -5px;
+}
+
+.hero h1 span {
+  color: var(--accent);
+}
+
+.hero-text {
+  margin: 28px auto;
+  max-width: 560px;
+  color: #c4c4ca;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.hero-button,
+.work-form button {
+  display: inline-block;
+  border: 0;
+  border-radius: 6px;
+  padding: 14px 24px;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero-button:hover,
+.work-form button:hover {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   FILM
+   ============================== */
+
+.films-section {
+  padding: 100px 0;
+  background: #101015;
+}
+
+.section-heading {
+  margin-bottom: 48px;
+}
+
+.section-heading h2,
+.work-intro h2 {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+.section-heading > p:last-child,
+.work-intro > p:last-child {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.film-card {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.film-card:hover {
+  transform: translateY(-6px);
+  border-color: #484854;
+}
+
+.film-image {
+  height: 280px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.film-image-1 {
+  background:
+    linear-gradient(transparent 35%, rgba(0, 0, 0, 0.85)),
+    radial-gradient(circle at 50% 25%, #8b6c42, #283a54 42%, #080c15 80%);
+}
+
+.film-image-2 {
+  background:
+    linear-gradient(transparent 35%, rgba(0, 0, 0, 0.9)),
+    radial-gradient(circle at 55% 35%, #84735d, #363026 40%, #0c0b0a 80%);
+}
+
+.film-image-3 {
+  background:
+    linear-gradient(transparent 35%, rgba(0, 0, 0, 0.85)),
+    radial-gradient(circle at 45% 35%, #d54b62, #4e2c67 40%, #111326 80%);
+}
+
+.genre {
+  padding: 7px 11px;
+  border-radius: 20px;
+  background: var(--accent);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.film-content {
+  padding: 24px;
+}
+
+.film-content h3 {
+  margin: 0 0 12px;
+  font-size: 1.35rem;
+}
+
+.film-content p {
+  min-height: 80px;
+  margin: 0 0 20px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.read-more {
+  color: #ff5961;
+  font-weight: 700;
+}
+
+/* ==============================
+   FORM
+   ============================== */
+
+.work-section {
+  padding: 100px 0;
+  background: var(--surface);
+}
+
+.work-intro {
+  max-width: 500px;
+  padding-right: 40px;
+}
+
+.work-form {
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #101015;
+}
+
+.work-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #dddde2;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.work-form input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 22px;
+  padding: 14px 15px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  outline: none;
+  background: #1a1a22;
+  color: white;
+  font-size: 1rem;
+}
+
+.work-form input:focus {
+  border-color: var(--accent);
+}
+
+.work-form button {
+  width: 100%;
+}
+
+/* ==============================
+   FOOTER
+   ============================== */
+
+footer {
+  padding: 28px 20px;
+  text-align: center;
+  background: #08080b;
+  color: #777780;
+  font-size: 0.85rem;
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+
+@media (max-width: 700px) {
+  .navbar-custom .container-custom {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links {
+    gap: 16px;
+    font-size: 0.85rem;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .work-intro {
+    padding-right: 0;
+    margin-bottom: 35px;
+  }
+}
